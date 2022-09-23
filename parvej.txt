@@ -1,0 +1,18 @@
+use onlineshoppingportal
+
+db.customers
+db.customers.insertMany([	{cus_name:"parvej",cus_email:"abc@gmail.com",cus_mob:"1234567890",cus_wallet:1000,cus_address:{cus_city:"patti",cus_pin:130235,cus_address:"pa"}},{cus_name:"alam",cus_email:"alam@gmail.com",cus_mob:"1254963087",cus_wallet:20000,cus_address:{cus_city:"pratapgarh",cus_pin:256354,cus_address:"up"}},{cus_name:"mohd",cus_email:"mohd@gmail.com",cus_mob:"9988776655",cus_wallet:"1000},cus_address:{cus_city:"patti",cus_pin:130235,cus_address:"uttar"}}
+]);
+
+db.customers.find({cus_address.cus_pin:130235}).pretty();
+db.customers.find({cus_address.cus_city:"patti"}).pretty();
+
+db.orders
+db.orders.insertMany([{order_status:"delivered",order_amount:1500},{order_status:"pending",order_amount:10000},{order_status:"pending",order_amount:3333}]);
+db.orders.find({order_status:"pending"}).pretty();
+
+db.products
+db.product.insertMany([{prod_name:"Mobile",prod_cat:"Devices",prod_price:40000},{prod_name:"Table",prod_cat:"Electronic",prod_price:8000}]);
+db.product.find({},{prod_name:1,prod_price:1,_id:0});
+
+
